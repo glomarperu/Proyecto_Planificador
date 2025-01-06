@@ -51,4 +51,17 @@ export const styles = StyleSheet.create({
         marginTop: 10,
         alignItems: 'center',
     },
+    //agregado por Imanol
+    label: {
+        fontSize: 16,
+        marginBottom: 5,
+        color: colors.dark,
+    },
+    picker: {
+        backgroundColor: colors.light,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        borderRadius: 5,
+        marginBottom: 15,
+    },
 });

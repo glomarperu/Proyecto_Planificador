@@ -38,7 +38,10 @@ export const HomeScreen = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Bienvenido</Text>
       <ButtonComponent onAction={logout} label="Cerrar Sesión" />
-      <ButtonComponent onAction={handleAddTask} label="Agregar Tarea" />
+      <ButtonComponent
+            label="Agregar Tarea"
+            onAction={() => navigation.navigate('AddTask')}
+          />
       <ButtonComponent onAction={handleTaskList} label="Lista de Tareas" />
     </View>
   );

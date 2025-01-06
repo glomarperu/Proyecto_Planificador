@@ -5,11 +5,13 @@ import { RegisterScreen } from '../screens/auth/RegisterScreen';
 import { HomeScreen } from '../screens/home/HomeScreen';
 import { CommonActions, useNavigation } from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
+import { AddTaskScreen } from '../screens/tasks/AddTaskScreen';
 
 export type RootStackParams = {
   Login: undefined;
   Register: undefined;
   Home: undefined;
+  AddTask: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -41,6 +43,7 @@ export const StackNavigation = ({ user }: StackNavigationProps) => {
       {user ? (
         <>
           <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="AddTask" component={AddTaskScreen} />
         </>
       ) : (
         <>
