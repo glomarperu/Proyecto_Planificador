@@ -15,12 +15,12 @@ export type RootStackParams = {
 const Stack = createStackNavigator<RootStackParams>();
 
 interface StackNavigationProps {
-  user: any; // Ajusta el tipo según Firebase Auth
+  user: any; 
 }
 
 export const StackNavigation = ({ user }: StackNavigationProps) => {
   const navigation = useNavigation();
-  // Escuchar cambios en el estado de autenticación
+  //cambios en el estado de autenticación
   useEffect(() => {
     const unsubscribe = auth().onAuthStateChanged((user) => {
       if (!user) {

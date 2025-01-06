@@ -7,7 +7,6 @@ import { RootStackParams } from '../../routes/StackNavigation'; // Asegúrate de
 import { ButtonComponent } from '../../components/ButtonComponent';
 import { styles } from '../../theme/styles';
 
-
 export const HomeScreen = () => {
   const navigation = useNavigation<StackNavigationProp<RootStackParams>>();
 
@@ -21,7 +20,7 @@ export const HomeScreen = () => {
             routes: [{ name: 'Login' }],
           })
         );
-      }, 500); // Dar tiempo a que se complete la salida antes de resetear la navegación
+      }, 500);
     } catch (error) {
       console.error('Error al cerrar sesión:', error);
     }
@@ -29,12 +28,10 @@ export const HomeScreen = () => {
 
   const handleAddTask = () => {
     console.log('Agregar tarea');
-    // Aquí podrías navegar a otra pantalla o realizar alguna acción
   };
 
   const handleTaskList = () => {
     console.log('Lista de tareas');
-    // Aquí podrías navegar a otra pantalla o realizar alguna acción
   };
 
   return (
