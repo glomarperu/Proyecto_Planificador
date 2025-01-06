@@ -18,10 +18,6 @@ export const HomeScreen = () => {
     }
   }, []);
 
-  //SE AGREGA PARA VER EN CONSOLA
-  const handleConfigTask = () => {
-    console.log('Agregar tarea');    
-  };
   //SE HACE CAMBIOS PARA QUE ESTE MEJOR DISTRIBUIDO Y EN UN CONTENEDOR TIPO CARD
   return (
     <View style={styles.container}>
@@ -61,6 +57,6 @@ export const HomeScreen = () => {
             <Text style={styles.cardText}>Configuración</Text>
           </Pressable>     
         </View>     
-    </View>
+    </View>  
   );
 };

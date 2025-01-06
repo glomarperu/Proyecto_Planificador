@@ -51,8 +51,8 @@ export const StackNavigation = ({ user }: StackNavigationProps) => {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="TaskList" component={TaskListScreen} />
           <Stack.Screen name="AddTask" component={AddTaskScreen} />
-          <Stack.Screen name="EditTask" component={EditTaskScreen} />               
-          <Stack.Screen name="Config" component={ConfigurationScreen} />        
+          <Stack.Screen name="EditTask" component={EditTaskScreen} />          
+          <Stack.Screen name="Config" component={ConfigurationScreen} />  
         </>
       ) : (
         <>

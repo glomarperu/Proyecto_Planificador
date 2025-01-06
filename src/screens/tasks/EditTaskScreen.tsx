@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { View, Text, TextInput, Pressable, Alert } from 'react-native';
+import { View, Text, TextInput, Alert } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
 import { TaskContext } from '../../context/TaskContext';
@@ -27,7 +27,7 @@ export const EditTaskScreen = () => {
       Alert.alert('Error', 'Por favor, completa todos los campos obligatorios.');
       return;
     }
-    // SE CAMBIA POR EL NUEVO DATO PARA CAMBIAR EL ESTADO DE LA FECHA Y HORA
+    // SE CAMBIA POR EL NUEVO DATO PARA CAMBIAR EL ESTADO DE LA FECHA Y HORA 
     const modificationDate = new Date().toISOString().split('T')[0]; // Fecha actual
     const modificationTime = new Date().toLocaleTimeString(); // Hora actual
   
