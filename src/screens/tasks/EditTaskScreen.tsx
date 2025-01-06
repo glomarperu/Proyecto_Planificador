@@ -27,9 +27,9 @@ export const EditTaskScreen = () => {
       Alert.alert('Error', 'Por favor, completa todos los campos obligatorios.');
       return;
     }
-  
-    const date = new Date().toISOString().split('T')[0];
-    const time = new Date().toLocaleTimeString();
+    // SE CAMBIA POR EL NUEVO DATO PARA CAMBIAR EL ESTADO DE LA FECHA Y HORA
+    const modificationDate = new Date().toISOString().split('T')[0]; // Fecha actual
+    const modificationTime = new Date().toLocaleTimeString(); // Hora actual
   
     try {
       await updateTask(taskId, {
@@ -37,8 +37,8 @@ export const EditTaskScreen = () => {
         description,
         status,
         category,
-        date, 
-        time, 
+        modificationDate, // Fecha de modificación
+        modificationTime, // Hora de modificación
       });
       Alert.alert('Éxito', 'Tarea actualizada correctamente', [
         {

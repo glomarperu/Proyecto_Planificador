@@ -47,9 +47,8 @@ export const TaskListScreen = () => {
           data={tasks}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
-            //pongo el pressable para poder editar en el texto de la tarea
-            <Pressable
-                    onPress={() => navigation.navigate('EditTask', { taskId: item.id })}>
+            //pongo el pressable para poder editar en el texto de la tarea   
+            //SE ANULA EL PRESSABLE PARA DAR MEJOS ASPECTO         
                 <View style={styles.taskItem}>
                     <Text>
                         <Text style={styles.taskName}>Tarea: </Text>
@@ -67,21 +66,34 @@ export const TaskListScreen = () => {
                         <Text style={[styles.taskNameSecundario]}>Categoría: </Text>
                         <Text style={styles.taskDescription}> {item.category}</Text>
                     </Text>
+                    {/* SE AGREA modificationDate PARA MEJORAR LA FECHA AL MOSTRAR UNA ACTUALIZACIÓN */}
                     <Text>
-                        <Text style={[styles.taskNameSecundario]}>Fecha Creación: </Text>
-                        <Text style={styles.taskDescription}> {item.date}</Text>
+                        <Text style={styles.taskNameSecundario}>
+                        {item.modificationDate ? 'Fecha Modificación: ' : 'Fecha Creación: '}
+                        </Text>
+                        <Text style={styles.taskDescription}>
+                        {item.modificationDate || item.date}
+                        </Text>
                     </Text>
-                    <Text>
-                        <Text style={[styles.taskNameSecundario]}>Hora Creación: </Text>
-                        <Text style={styles.taskDescription}> {item.time}</Text>
-                    </Text>  
+                        <Text>
+                        <Text style={styles.taskNameSecundario}>
+                        {item.modificationTime ? 'Hora Modificación: ' : 'Hora Creación: '}
+                        </Text>
+                        <Text style={styles.taskDescription}>
+                        {item.modificationTime || item.time}
+                        </Text>
+                    </Text> 
+                    <Pressable
+                        style={styles.editButton}
+                        onPress={() => navigation.navigate('EditTask', { taskId: item.id })}>
+                        <Text style={styles.buttonText}>Editar</Text>
+                    </Pressable>
                     <Pressable
                         style={styles.deleteButton}
                         onPress={() => handleDeleteTask(item.id)}>
                         <Text style={styles.buttonText}>Eliminar</Text>
                     </Pressable>
-                </View>
-            </Pressable> 
+              </View>     
           )}
         />
       )}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Pressable, Alert } from 'react-native';
+import { View, Text, TextInput, Pressable, Alert, Image } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParams } from '../../routes/StackNavigation';
@@ -33,19 +33,22 @@ export const LoginScreen = ({ navigation }: Props) => {
   };
 
   return (    
-    <View style={styles.container}>      
+    <View style={styles.container}>  
+      <Image 
+        source={require('../../img/logo.png')} // Ajusta la ruta a tu imagen
+        style={styles.logo}/>    
       <Text style={styles.title}>Iniciar Sesión</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Correo"
-        value={email}
-        onChangeText={setEmail}/>
-      <TextInput
-        style={styles.input}
-        placeholder="Contraseña"
-        secureTextEntry
-        value={password}
-        onChangeText={setPassword}/>
+        <TextInput
+          style={styles.input}
+          placeholder="Correo"
+          value={email}
+          onChangeText={setEmail}/>
+        <TextInput
+          style={styles.input}
+          placeholder="Contraseña"
+          secureTextEntry
+          value={password}
+          onChangeText={setPassword}/>
       <ButtonComponent 
         onAction={ButtonLogin} 
         label="Iniciar Sesión"/>            

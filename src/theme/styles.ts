@@ -104,4 +104,50 @@ export const styles = StyleSheet.create({
         borderRadius: 5,
         alignItems: 'center',
       },
+      //Mejorado por leonardo
+    logo: {
+        width: 120,
+        height: 180,
+        marginBottom: 20, // Espacio entre la imagen y el título
+        alignSelf: 'center', // Centra la imagen horizontalmente
+    },
+    cardContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: 10, // Espacio entre tarjetas
+    },
+    card: {
+        width: 150,
+        height: 150,
+        borderRadius: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 10,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.3,
+        shadowRadius: 3,
+        elevation: 5, // Sombra en Android
+    },
+    cardText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    icon: {
+        width: 90,
+        height: 90,
+        marginTop: 10,
+        marginBottom: 10, // Espacio entre la imagen y el título
+        alignSelf: 'center', // Centra la imagen horizontalmente
+    },
+    editButton: {
+        backgroundColor: '#4CAF50', // Verde para diferenciarlo del botón de eliminar
+        padding: 10,
+        marginVertical: 5,
+        borderRadius: 5,
+        alignItems: 'center',
+    },
 });

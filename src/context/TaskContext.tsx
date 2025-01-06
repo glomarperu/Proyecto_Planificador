@@ -10,6 +10,8 @@ interface Task {
   time: string;
   status: string;
   category: string;
+  modificationDate?: string; // Fecha de modificación
+  modificationTime?: string; // Hora de modificación
 }
 
 interface TaskContextProps {

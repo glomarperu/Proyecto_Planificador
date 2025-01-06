@@ -8,6 +8,7 @@ import { EditTaskScreen } from '../screens/tasks/EditTaskScreen';
 import { TaskListScreen } from '../screens/tasks/TaskListScreen';
 import { CommonActions, useNavigation } from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
+import { ConfigurationScreen } from '../screens/config/ConfigurationScreen';
 
 export type RootStackParams = {
   Login: undefined;
@@ -16,6 +17,7 @@ export type RootStackParams = {
   AddTask: undefined;
   EditTask: { taskId: string };
   TaskList: undefined;
+  Config: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -50,6 +52,7 @@ export const StackNavigation = ({ user }: StackNavigationProps) => {
           <Stack.Screen name="TaskList" component={TaskListScreen} />
           <Stack.Screen name="AddTask" component={AddTaskScreen} />
           <Stack.Screen name="EditTask" component={EditTaskScreen} />          
+          <Stack.Screen name="Config" component={ConfigurationScreen} />     
         </>
       ) : (
         <>
