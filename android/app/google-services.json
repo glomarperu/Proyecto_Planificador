@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "962720671484",
+    "project_id": "proyectoplan-26acc",
+    "storage_bucket": "proyectoplan-26acc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962720671484:android:10755dc363135db1785979",
+        "android_client_info": {
+          "package_name": "com.proyecto_plan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9CjZJZZAl-wbOlUNudD3D1HyqQ9KPGw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
