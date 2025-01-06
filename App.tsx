@@ -1,11 +1,12 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import { HomeScreen } from './src/routes/HomeScreen';
 
 function App(): React.JSX.Element {  
 
  return (   
         <View>
-          <Text>Hola, mundo!</Text>
+          <HomeScreen/>
         </View>
   );
 }
