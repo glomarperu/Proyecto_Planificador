@@ -105,7 +105,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
       },
       //Mejorado por leonardo
-    logo: {
+      logo: {
         width: 120,
         height: 180,
         marginBottom: 20, // Espacio entre la imagen y el título
