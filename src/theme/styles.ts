@@ -11,6 +11,11 @@ export const colors = {
 }; 
 
 export const styles = StyleSheet.create({    
+    container: {
+        flex: 1,
+        padding: 20,
+        backgroundColor: colors.background, // Fondo general
+    }, 
     title: {
         color: colors.primary,
         fontSize: 30,
@@ -29,6 +34,21 @@ export const styles = StyleSheet.create({
         color: colors.light,
         fontSize: 15,
         fontWeight: 'bold',
+        alignItems: 'center',
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: 'gray',
+        padding: 10,
+        borderRadius: 5,
+        marginVertical: 5,
+        width: '100%',
+        backgroundColor: 'white',
+    },
+    linkText: {
+        color: colors.primary,
+        fontSize: 16,
+        marginTop: 10,
         alignItems: 'center',
     },
 });

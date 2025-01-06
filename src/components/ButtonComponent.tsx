@@ -7,6 +7,7 @@ interface Props {
   label: string;
 }
 
+//Boton creado para reusar en mis vistas
 export const ButtonComponent = ({ onAction, label }: Props) => {
   return (
     <Pressable style={styles.button} onPress={onAction}>
