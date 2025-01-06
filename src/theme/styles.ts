@@ -64,4 +64,36 @@ export const styles = StyleSheet.create({
         borderRadius: 5,
         marginBottom: 15,
     },
+    noTasks: {
+        fontSize: 16,
+        textAlign: 'center',
+        color: colors.white,
+        marginTop: 50,
+    },
+    taskItem: {
+        backgroundColor: '#E0F7FA',
+        padding: 10,
+        marginVertical: 10,
+        borderRadius: 8,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+      }, 
+      taskName: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: colors.dark,
+    },
+    taskNameSecundario: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: colors.dark,
+    },
+    taskDescription: {
+        fontSize: 14,
+        color: colors.white,
+        marginTop: 5,
+    },
 });

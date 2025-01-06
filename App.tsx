@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { TaskProvider } from './src/context/TaskContext';
 import { StackNavigation } from './src/routes/StackNavigation';
 import auth from '@react-native-firebase/auth';
 
@@ -17,9 +18,11 @@ function App(): React.JSX.Element {
   }, []);
 
  return (   
+      <TaskProvider>
         <NavigationContainer>
           <StackNavigation user={user} />
         </NavigationContainer>
+      </TaskProvider>
   );
 }
 

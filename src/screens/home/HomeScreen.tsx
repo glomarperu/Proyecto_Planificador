@@ -42,7 +42,10 @@ export const HomeScreen = () => {
             label="Agregar Tarea"
             onAction={() => navigation.navigate('AddTask')}
           />
-      <ButtonComponent onAction={handleTaskList} label="Lista de Tareas" />
+      <ButtonComponent
+            label="Lista de Tareas"
+            onAction={() => navigation.navigate('TaskList')}
+          />
     </View>
   );
 };
