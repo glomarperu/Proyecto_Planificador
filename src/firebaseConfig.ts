@@ -17,4 +17,4 @@ if (!firebase.apps.length) {
 export const db = firestore();
 
 
-/// Probando otra conexión
+/// Probando mi conexión Jhon
