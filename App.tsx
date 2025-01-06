@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { HomeScreen } from './src/routes/HomeScreen';
+import { HomeScreen } from './src/screens/home/HomeScreen';
 
 function App(): React.JSX.Element {  
 
