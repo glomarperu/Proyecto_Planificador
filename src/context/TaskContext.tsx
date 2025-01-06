@@ -2,7 +2,6 @@ import React, { createContext, useState, ReactNode, useEffect } from 'react';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 
-//agregar las variables a usar
 interface Task {
   id: string;
   name: string;
@@ -17,13 +16,15 @@ interface TaskContextProps {
   tasks: Task[];
   obtenerTasks: () => Promise<void>;
   addTask: (task: Omit<Task, 'id'>) => Promise<void>;
+  updateTask: (id: string, updates: Partial<Task>) => Promise<void>;
+  deleteTask: (id: string) => Promise<void>;
 }
 
 export const TaskContext = createContext<TaskContextProps | null>(null);
 
 export const TaskProvider = ({ children }: { children: ReactNode }) => {
-    const [tasks, setTasks] = useState<Task[]>([]);
-    
+  const [tasks, setTasks] = useState<Task[]>([]);
+  
   // Obtener el ID del usuario autenticado
   const userId = auth().currentUser?.uid;
 
@@ -68,15 +69,49 @@ export const TaskProvider = ({ children }: { children: ReactNode }) => {
         .doc(user.uid)
         .collection('userTasks')
         .add(task);
-        obtenerTasks();// Actualiza las tareas después de agregar una nueva
+      obtenerTasks(); // Actualiza las tareas después de agregar una nueva
     } catch (error) {
       console.error('Error adding task:', error);
     }
   };
 
+  const updateTask = async (id: string, updates: Partial<Task>) => {
+    try {
+      //Actualiza la tarea
+      if (!userId) return;
+      await firestore()
+        .collection('tasks')
+        .doc(userId)
+        .collection('userTasks')
+        .doc(id)
+        .update(updates);
+      setTasks((prevTasks) =>
+        prevTasks.map((task) =>
+          task.id === id ? { ...task, ...updates } : task)
+      );
+    } catch (error) {
+      console.error('Error updating task:', error);
+    }
+  };
+
+  const deleteTask = async (taskId: string) => {
+    try {
+      if (!userId) return;
+      await firestore()
+        .collection('tasks')
+        .doc(userId)
+        .collection('userTasks')
+        .doc(taskId)
+        .delete();
+        setTasks(tasks.filter((task) => task.id !== taskId));//corregido para evitar redundancias
+    } catch (error) {
+      console.error('Error deleting task:', error);
+    }
+  };
+
   return (
     <TaskContext.Provider
-      value={{ tasks, addTask, obtenerTasks }}>
+      value={{ tasks, obtenerTasks, addTask, updateTask, deleteTask }}>
       {children}
     </TaskContext.Provider>
   );

@@ -96,4 +96,11 @@ export const styles = StyleSheet.create({
         color: colors.white,
         marginTop: 5,
     },
+    deleteButton: {
+        backgroundColor: '#F44336', // Rojo para el botón de eliminar
+        padding: 10,
+        marginVertical: 5,
+        borderRadius: 5,
+        alignItems: 'center',
+      },
 });

@@ -24,7 +24,6 @@ export const RegisterScreen = () => {
         lastName,
         email,
       });
-      // Al registrar, redirigir al Login
       Alert.alert('Éxito', 'Usuario registrado correctamente')      
     } catch (error) {
       Alert.alert('Error', 'Usuario no registrado');

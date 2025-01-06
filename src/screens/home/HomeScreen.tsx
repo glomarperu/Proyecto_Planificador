@@ -12,6 +12,7 @@ export const HomeScreen = () => {
 
   const logout = async () => {
     try {
+      //usuario desconectado
       await auth().signOut();
       setTimeout(() => {
         navigation.dispatch(
@@ -24,15 +25,7 @@ export const HomeScreen = () => {
     } catch (error) {
       console.error('Error al cerrar sesión:', error);
     }
-  };
-
-  const handleAddTask = () => {
-    console.log('Agregar tarea');
-  };
-
-  const handleTaskList = () => {
-    console.log('Lista de tareas');
-  };
+  }; 
 
   return (
     <View style={styles.container}>

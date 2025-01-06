@@ -3,28 +3,30 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { LoginScreen } from '../screens/auth/LoginScreen';
 import { RegisterScreen } from '../screens/auth/RegisterScreen';
 import { HomeScreen } from '../screens/home/HomeScreen';
+import { AddTaskScreen } from '../screens/tasks/AddTaskScreen';
+import { EditTaskScreen } from '../screens/tasks/EditTaskScreen';
+import { TaskListScreen } from '../screens/tasks/TaskListScreen';
 import { CommonActions, useNavigation } from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
-import { AddTaskScreen } from '../screens/tasks/AddTaskScreen';
-import { TaskListScreen } from '../screens/tasks/TaskListScreen';
 
 export type RootStackParams = {
   Login: undefined;
   Register: undefined;
   Home: undefined;
   AddTask: undefined;
+  EditTask: { taskId: string };
   TaskList: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParams>();
 
 interface StackNavigationProps {
-  user: any; 
+  user: any; // Ajusta el tipo según Firebase Auth
 }
 
 export const StackNavigation = ({ user }: StackNavigationProps) => {
   const navigation = useNavigation();
-  //cambios en el estado de autenticación
+  // Escuchar cambios en el estado de autenticación
   useEffect(() => {
     const unsubscribe = auth().onAuthStateChanged((user) => {
       if (!user) {
@@ -47,6 +49,7 @@ export const StackNavigation = ({ user }: StackNavigationProps) => {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="TaskList" component={TaskListScreen} />
           <Stack.Screen name="AddTask" component={AddTaskScreen} />
+          <Stack.Screen name="EditTask" component={EditTaskScreen} />          
         </>
       ) : (
         <>

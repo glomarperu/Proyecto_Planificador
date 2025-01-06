@@ -16,7 +16,7 @@ export const LoginScreen = ({ navigation }: Props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const ButtonLogin = async () => {
+  const ButtonLogin = async () => {    
     if (!email.trim() || !password.trim()) {
       Alert.alert('Error', 'Por favor, ingresa tu correo y/o contraseña.');
       return;
